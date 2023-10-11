@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virtual Tour 360</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-webcentric-component@0.1.0/dist/aframe-webcentric-component.min.js"></script>
+    <script src="../js/livecode.js"></script>
+  </head>
+  <body>
+    <a-scene webcentric>
+      <a-assets>
+        <!--imagem cenários 360 -->
+        <img
+          id="inicio"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/menu0360.jpg?v=1696438220769"
+        />
+        <img
+          id="castelo"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/castelo360.jpg?v=1696430977077"
+        />
+        <img
+          id="anjos"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/anjos360.jpg?v=1696430983528"
+        />
+        <img
+          id="interiorcastelo"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/interiorcastelo360.jpg?v=1696430966073"
+        />
+      </a-assets>
+
+      <a-sky src="#inicio"></a-sky>
+
+      <!-- Para funcionar o look-at e billboard em relação á imagem a câmera é primeiro-->
+      <a-entity id="cameraRig">
+        <a-camera
+          id="camera"
+          position="0 1.6 0"
+          wasd-controls-enabled="false"
+          mouse-wheel-zoom
+          ><a-cursor></a-cursor
+        ></a-camera>
+      </a-entity>
+
+      <!-- Portais dos cenários -->
+
+      <!-- Portal do castelo -->
+      <a-link
+        position="-0.98124 1.6 -7"
+        link="visualAspectEnabled:false"
+        href="castelo.html"
+        title="Visitar castelo"
+      ><a-sphere src="#castelo"></a-sphere>
+      </a-link>
+      <a-text
+        position="-0.980 0.75 -5.500"
+        value="Visita ao Castelo"
+        color="black"
+        align="center"
+      ></a-text>
+      
+      <!-- Portal dos anjos -->
+      <a-link
+        position="-5.55 1.6 2.9"
+        link="visualAspectEnabled:false"
+        href="anjos.html"
+        title="Visitar castelo"
+      ><a-sphere src="#anjos"></a-sphere>
+      </a-link>
+      <a-text
+        position="-5.0 0.6 2.9"
+        rotation="0 115 0"
+        value="Convento dos Anjos"
+        color="black"
+        align="center"
+      ></a-text>
+    </a-scene>
+
+    <!-- Botão Glitch -->
+    <div
+      class="glitchButton"
+      style="position: fixed; top: 20px; right: 20px"
+    ></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
