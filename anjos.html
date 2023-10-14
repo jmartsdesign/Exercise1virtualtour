@@ -8,9 +8,15 @@
     <script src="../js/livecode.js"></script>
   </head>
   <body>
+    <!--webcentric stats -->
     <a-scene webcentric>
       <a-assets>
         <!--imagems dos paineis informativo -->
+        <img
+          id="infopanel"
+          crossorign="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/infopanel-down.png?v=1696515890159"
+        />
         <img
           id="infopanel-anjos"
           crossorigin="anonymous"
@@ -63,7 +69,7 @@
       <!-- adicionar a imagem que deve ser perpendicular à câmera com billboard -->
       <a-entity
         class="infopanel-1"
-        position="-4.5 2 -3.5"
+        position="-1.3 2 -2.4"
         look-at="[camera]"
         billboard
         mouse-wheel-zoom
@@ -93,6 +99,26 @@
           text=""
           visible=""
         ></a-text>
+        <a-image
+          src="#infopanel"
+          position="1.2 0 -0.15"
+          height="1"
+          width="1.2"
+          material=""
+          geometry=""
+          visible=""
+        ></a-image>
+        <a-text
+          class="description"
+          baseline="top"
+          width="0.9"
+          font="https://raw.githubusercontent.com/jorgecardoso/aframe-course-resources/master/fonts/montserrat.fnt"
+          position="0.6 0.3 0"
+          value="Esta casa conventual teve a sua origem numa pequena ermida pertencente a Diogo da Azambuja. Em 1494, o Papa Alexandre VI passou o breve da fundação do Convento dos frades eremitas de Santo Agostinho, sendo o seu principal impulsionador Diogo da Azambuja. As obras foram lentas, sendo a igreja a primeira a ser construída. No séc. XX foi classificado como Monumento Nacional e intervencionado. Planta composta pela igreja, sacristia, cozinha, refeitório, claustro, sala do capítulo, celas, portaria e outras dependências."
+          align="left"
+          color="black"
+        >
+        </a-text>
       </a-entity>
     </a-scene>
     <div

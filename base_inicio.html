@@ -8,14 +8,23 @@
     <script src="../js/livecode.js"></script>
   </head>
   <body>
-    <!--webcentric stats -->
     <a-scene webcentric>
       <a-assets>
+        <img
+          id="fci"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.com/80978ab7-9db6-45ae-bc43-4fab16bdbb6e%2FFCI-MDS-01.png?v=1589546071255"
+        />
         <!--imagems dos paineis informativo -->
         <img
-          id="infopanel"
-          crossorign="anonymous"
-          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/infopanel-down.png?v=1696515890159"
+          id="infopanel-anjos"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/infopanel-anjos.png?v=1696517233726"
+        />
+        <img
+          id="infopanel-castelo"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/infopanel-castelo.png?v=1696526235582"
         />
         <img
           id="infopanel-igreja"
@@ -24,9 +33,19 @@
         />
         <!--imagem cenários 360 -->
         <img
+          id="inicio"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/menu0360.jpg?v=1696438220769"
+        />
+        <img
           id="castelo"
           crossorigin="anonymous"
           src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/castelo360.jpg?v=1696430977077"
+        />
+        <img
+          id="anjos"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/anjos360.jpg?v=1696430983528"
         />
         <img
           id="interiorcastelo"
@@ -35,7 +54,7 @@
         />
       </a-assets>
 
-      <a-sky src="#interiorcastelo"></a-sky>
+      <a-sky src="#inicio"></a-sky>
 
       <!-- Para funcionar o look-at e billboard em relação á imagem a câmera é primeiro-->
       <a-entity id="cameraRig">
@@ -48,36 +67,19 @@
         ></a-camera>
       </a-entity>
 
-      <!-- Portal do inicio -->
-      <a-link
-        position="-6 1.6 -4.1"
-        link="visualAspectEnabled:false"
-        href="castelo.html"
-        title="Sair do castelo"
-        ><a-sphere src="#castelo"></a-sphere>
-      </a-link>
-      <a-text
-        position="-6 0.50 -4.1"
-        rotation="0 50 0"
-        value="Sair do Castelo"
-        color="black"
-        align="center"
-        side="double"
-      ></a-text>
-
       <!-- Paineis de informação dos cenários -->
       <!-- adicionar a imagem que deve ser perpendicular à câmera com billboard -->
       <a-entity
         class="infopanel-1"
-        position="0 2 2.8"
-        look-at="[camera]"
+        position="-5 1.6 4"
+        look-at="#camera"
         billboard
         mouse-wheel-zoom
         visible=""
         rotation="0 90 0"
         scale="2.3 2.3 2.3"
         ><a-image
-          src="#infopanel-igreja"
+          src="#infopanel-anjos"
           height="1"
           width="1"
           material=""
@@ -89,7 +91,7 @@
           font="https://raw.githubusercontent.com/jorgecardoso/aframe-course-resources/master/fonts/montserrat-bold.fnt"
           position="0.07 0.44 0.001"
           width="1"
-          value="Igreja da Alcáçova"
+          value="Convento dos Anjos"
           align="left"
           color="#00000f"
           anchor="center"
@@ -99,26 +101,40 @@
           text=""
           visible=""
         ></a-text>
-        <a-image
-          src="#infopanel"
-          position="1.2 0 -0.15"
+      </a-entity>
+
+      <a-entity
+        class="infopanel-2"
+        position="-0.58 1.6 -6.082"
+        look-at="[camera]"
+        billboard
+        mouse-wheel-zoom
+        visible=""
+        rotation="0 0 0"
+        scale="2.3 2.3 2.3"
+        ><a-image
+          src="#infopanel-castelo"
           height="1"
-          width="1.2"
+          width="1"
           material=""
           geometry=""
           visible=""
         ></a-image>
         <a-text
-          class="description"
+          class="title"
+          font="https://raw.githubusercontent.com/jorgecardoso/aframe-course-resources/master/fonts/montserrat-bold.fnt"
+          position="0.07 0.44 0.001"
+          width="1"
+          value="Castelo"
+          align="center"
+          color="#00000f"
+          anchor="center"
           baseline="top"
-          width="0.9"
-          font="https://raw.githubusercontent.com/jorgecardoso/aframe-course-resources/master/fonts/montserrat.fnt"
-          position="0.68 0.4 0.006"
-          value="Localizada próximo do muro interior do castelo, para a parte sul. É de invocação a Nossa Senhora da Assunção.n\Foi mandada edificar em 1090, pelo Presbítero Vermudo, por ordem do Conde D. Sesnando. Foi reedificada definitivamente no primeiro quartel do século XVI, obra atribuída ao arquitecto Francisco Pires, sob a ordem do bispo-conde D. Jorge de Almeida. Composição estrutural simples, com três naves de cinco tramos e três capelas absidais. Nave central levantada, sem janelas acima das arcadas. Cabeceira de composição complexa: arcos abertos entre as capelas laterais e a mor, em plano, dão a aparência de um transepto."
-          align="left"
-          color="black"
-        >
-        </a-text>
+          height="0.02"
+          wrap-count="20"
+          text=""
+          visible=""
+        ></a-text>
       </a-entity>
     </a-scene>
     <div
