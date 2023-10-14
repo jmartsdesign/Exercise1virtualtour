@@ -11,3 +11,5 @@ Desenhos de Jorge Antunes e descrição dos monumentos retirado do site <a href=
 
 1. Descarregar o "Street View Download 360": <a href="https://svd360.istreetview.com/" target="_blank">https://svd360.istreetview.com</a>
 2. Seguir as instruções em: <a href="https://svd360.istreetview.com/#tutorial" target="blank">https://svd360.istreetview.com/#tutorial</a>
+----
+#### MDM/UC - ARVI - Ambientes de Realidade Virtual Interativos 2023
