@@ -5,9 +5,11 @@
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://unpkg.com/aframe-webcentric-component@0.1.0/dist/aframe-webcentric-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-webcentric-component/dist/aframe-webcentric-component.min.js"></script>
     <script src="../js/livecode.js"></script>
   </head>
   <body>
+    <!--webcentric stats -->
     <a-scene webcentric>
       <a-assets>
         <!--imagem cenários 360 -->
@@ -49,35 +51,41 @@
       <!-- Portais dos cenários -->
 
       <!-- Portal do castelo -->
-      <a-link
-        position="-0.98124 1.6 -7"
-        link="visualAspectEnabled:false"
-        href="castelo.html"
-        title="Visitar castelo"
-      ><a-sphere src="#castelo"></a-sphere>
-      </a-link>
-      <a-text
-        position="-0.980 0.75 -5.500"
-        value="Visita ao Castelo"
-        color="black"
-        align="center"
-      ></a-text>
-      
+      <a-entity class="PortalCaselo">
+        position="-0.98124 1.6 -7" look-at="[camera]"
+        <a-link
+          position="-0.98124 1.6 -7"
+          link="visualAspectEnabled:false"
+          href="castelo.html"
+          title="Visitar castelo"
+          ><a-sphere src="#castelo"></a-sphere>
+        </a-link>
+        <a-text
+          position="-0.980 0.75 -5.500"
+          value="Visita ao Castelo"
+          color="black"
+          align="center"
+        ></a-text>
+      </a-entity>
+
       <!-- Portal dos anjos -->
-      <a-link
-        position="-5.55 1.6 2.9"
-        link="visualAspectEnabled:false"
-        href="anjos.html"
-        title="Visitar castelo"
-      ><a-sphere src="#anjos"></a-sphere>
-      </a-link>
-      <a-text
-        position="-5.0 0.6 2.9"
-        rotation="0 115 0"
-        value="Convento dos Anjos"
-        color="black"
-        align="center"
-      ></a-text>
+      <a-entity class="PortalAnjos">
+        position="-5.55 1.6 2.9" look-at="[camera]"
+        <a-link
+          position="-5.55 1.6 2.9"
+          link="visualAspectEnabled:false"
+          href="anjos.html"
+          title="Visitar castelo"
+          ><a-sphere src="#anjos"></a-sphere>
+        </a-link>
+        <a-text
+          position="-5.0 0.6 2.9"
+          rotation="0 115 0"
+          value="Convento dos Anjos"
+          color="black"
+          align="center"
+        ></a-text>
+      </a-entity>
     </a-scene>
 
     <!-- Botão Glitch -->

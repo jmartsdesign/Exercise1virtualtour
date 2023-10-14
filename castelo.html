@@ -4,13 +4,19 @@
     <title>Virtual Tour 360</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-webcentric-component@0.1.0/dist/aframe-webcentric-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-webcentric-component/dist/aframe-webcentric-component.min.js"></script>
     <script src="../js/livecode.js"></script>
   </head>
   <body>
+    <!--webcentric stats -->
     <a-scene webcentric>
       <a-assets>
         <!--imagems dos paineis informativo -->
+        <img
+          id="infopanel"
+          crossorign="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/infopanel-down.png?v=1696515890159"
+        />
         <img
           id="infopanel-castelo"
           crossorigin="anonymous"
@@ -27,7 +33,7 @@
           crossorigin="anonymous"
           src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/castelo360.jpg?v=1696430977077"
         />
-                <img
+        <img
           id="interiorcastelo"
           crossorigin="anonymous"
           src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/interiorcastelo360.jpg?v=1696430966073"
@@ -63,17 +69,17 @@
         align="center"
         side="double"
       ></a-text>
-      
-            <!-- Portal interior castelo -->
+
+      <!-- Portal interior castelo -->
       <a-link
-        position="2 1.6 9"
+        position="-1.1 1.6 6"
         link="visualAspectEnabled:false"
         href="interiorcastelo.html"
         title="Visitar castelo"
         ><a-sphere src="#interiorcastelo"></a-sphere>
       </a-link>
       <a-text
-        position="2 0.50 9"
+        position="-1.15 0.50 6"
         rotation="0 180 0"
         value="Interior do Castelo"
         color="black"
@@ -85,7 +91,7 @@
       <!-- adicionar a imagem que deve ser perpendicular à câmera com billboard -->
       <a-entity
         class="infopanel-1"
-        position="3.5 2 2.5"
+        position="2 2 -1.0"
         look-at="[camera]"
         billboard
         mouse-wheel-zoom
@@ -115,6 +121,26 @@
           text=""
           visible=""
         ></a-text>
+        <a-image
+          src="#infopanel"
+          position="1.2 0 -0.15"
+          height="1"
+          width="1.2"
+          material=""
+          geometry=""
+          visible=""
+        ></a-image>
+        <a-text
+          class="description"
+          baseline="top"
+          width="0.9"
+          font="https://raw.githubusercontent.com/jorgecardoso/aframe-course-resources/master/fonts/montserrat.fnt"
+          position="0.6 0.3 0"
+          value="Em 990, Almançor tomou o Castelo, reconquistado, em 1006, por Mendo Luz. Em 1088 ou 1095, foi reedificado por Afonso VI de Castela. Em 1109, D. Teresa e seu filho, D. Afonso Henriques, teriam ordenando novas reformas no Castelo.\nO Infante D. Pedro mandou-o ampliar. No século XIV, o Castelo deve ter tido uma reforma geral. No séc. XX, realizaram-se obras de reconstrução.Classificado como Monumento Nacional desde 1910."
+          align="left"
+          color="black"
+        >
+        </a-text>
       </a-entity>
     </a-scene>
     <div

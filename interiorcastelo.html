@@ -8,9 +8,15 @@
     <script src="../js/livecode.js"></script>
   </head>
   <body>
+    <!--webcentric stats -->
     <a-scene webcentric>
       <a-assets>
         <!--imagems dos paineis informativo -->
+        <img
+          id="infopanel"
+          crossorign="anonymous"
+          src="https://cdn.glitch.global/b02fbfc7-b070-4884-8bb2-0a87c8dfbcb6/infopanel-down.png?v=1696515890159"
+        />
         <img
           id="infopanel-igreja"
           crossorigin="anonymous"
@@ -63,7 +69,7 @@
       <!-- adicionar a imagem que deve ser perpendicular à câmera com billboard -->
       <a-entity
         class="infopanel-1"
-        position="-6 2 3.8"
+        position="0 2 2.8"
         look-at="[camera]"
         billboard
         mouse-wheel-zoom
@@ -93,6 +99,26 @@
           text=""
           visible=""
         ></a-text>
+        <a-image
+          src="#infopanel"
+          position="1.2 0 -0.15"
+          height="1"
+          width="1.2"
+          material=""
+          geometry=""
+          visible=""
+        ></a-image>
+        <a-text
+          class="description"
+          baseline="top"
+          width="0.9"
+          font="https://raw.githubusercontent.com/jorgecardoso/aframe-course-resources/master/fonts/montserrat.fnt"
+          position="0.68 0.4 0.006"
+          value="Localizada próximo do muro interior do castelo, para a parte sul. É de invocação a Nossa Senhora da Assunção.n\Foi mandada edificar em 1090, pelo Presbítero Vermudo, por ordem do Conde D. Sesnando. Foi reedificada definitivamente no primeiro quartel do século XVI, obra atribuída ao arquitecto Francisco Pires, sob a ordem do bispo-conde D. Jorge de Almeida. Composição estrutural simples, com três naves de cinco tramos e três capelas absidais. Nave central levantada, sem janelas acima das arcadas. Cabeceira de composição complexa: arcos abertos entre as capelas laterais e a mor, em plano, dão a aparência de um transepto."
+          align="left"
+          color="black"
+        >
+        </a-text>
       </a-entity>
     </a-scene>
     <div
